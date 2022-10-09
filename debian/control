@@ -1,0 +1,40 @@
+Source: knights
+Section: games
+Priority: optional
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: José Manuel Santamaría Lema <panfaust@gmail.com>,
+           Norbert Preining <norbert@preining.info>,
+Build-Depends: cmake (>= 3.5~),
+               debhelper-compat (= 13),
+               extra-cmake-modules (>= 5.68.0~),
+               libkf5configwidgets-dev (>= 5.68.0~),
+               libkf5crash-dev (>= 5.68.0~),
+               libkf5dbusaddons-dev (>= 5.68.0~),
+               libkf5doctools-dev (>= 5.68.0~),
+               libkf5kdegames-dev (>= 4.9.0~),
+               libkf5kio-dev (>= 5.68.0~),
+               libkf5plasma-dev (>= 5.68.0~),
+               libkf5plotting-dev (>= 5.68.0~),
+               libkf5textwidgets-dev (>= 5.68.0~),
+               libkf5wallet-dev (>= 5.68.0~),
+               libkf5xmlgui-dev (>= 5.68.0~),
+               libqt5svg5-dev (>= 5.12.0~),
+               libqt5texttospeech5-dev (>= 5.10.0~),
+               pkg-kde-tools (>= 0.15.16),
+               qtbase5-dev (>= 5.12.0~),
+Standards-Version: 4.5.1
+Rules-Requires-Root: no
+Homepage: https://www.kde.org/applications/games/knights/
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/kde/knights
+Vcs-Git: https://salsa.debian.org/qt-kde-team/kde/knights.git
+
+Package: knights
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: gnuchess, sjeng, stockfish
+Suggests: crafty
+Description: chess interface for the KDE Platform
+ Knights aims to be the ultimate chess resource on your computer.
+ It's designed to be both friendly to new chess players and functional for
+ Grand Masters. At the moment you can play either against other human or
+ against the machine using an engine like gnuchess.

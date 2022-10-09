@@ -1,0 +1,2 @@
+rm_conffile /etc/xdg/knights.categories 20.04.3-1~
+rm_conffile /etc/xdg/knights.knsrc 20.12.1-1~

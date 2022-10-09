@@ -1,0 +1,329 @@
+knights (21.08.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.08.0)
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 17 Aug 2021 12:54:08 +0900
+
+knights (21.04.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.04.0).
+  * Added myself to the uploaders.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 28 Apr 2021 14:00:20 +0900
+
+knights (20.12.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Re-export upstream signing key without extra signatures.
+  * Update the build dependencies according to the upstream build system:
+    - bump Qt packages to 5.10.0
+    - bump KF packages to 5.57.0
+  * Bump the debhelper compatibility to 13:
+    - switch the debhelper-compat build dependency to 13
+  * Unregister the old /etc/xdg/knights.knsrc conffile.
+  * Bump Standards-Version to 4.5.1, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Thu, 07 Jan 2021 21:00:03 +0100
+
+knights (20.04.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Update watch file to the new release-service location.
+  * Update the build dependencies according to the upstream build system:
+    - bump cmake to 3.5
+  * Bump the debhelper compatibility to 12:
+    - switch the debhelper build dependency to debhelper-compat 12
+    - remove debian/compat
+  * Add Rules-Requires-Root: no.
+  * Bump Standards-Version to 4.5.0, no changes required.
+  * Add the configuration for the CI on salsa.
+  * Unregister knights.categories as conffile, as it is no more in /etc.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 01 Aug 2020 14:49:54 +0200
+
+knights (18.12.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Switch the watch file to stable releases, now that there are.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 17 Dec 2018 13:30:39 +0100
+
+knights (18.11.90-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Make sure to use the kf5 buildsystem when invoking dh_auto_configure.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 30 Nov 2018 22:38:19 +0100
+
+knights (18.11.80-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream development release: (Closes: #874962) (LP: #1757703)
+    - now part of KDE Applications, so adopt its versioning
+  * Switch Vcs-* fields to salsa.debian.org.
+  * Remove knights-dbg in favour of the -dbgsym package
+    - stop forcing --destdir for dh_auto_install, as there is only one binary
+      now
+  * Bump the debhelper compatibility to 11:
+    - bump the debhelper build dependency to 11~
+    - bump compat to 11
+    - remove --parallel for dh, as now done by default
+  * Drop the Debian-provided knights man page, as knights does not really have
+    command line options.
+  * Remove trailing whitespaces in changelog, and control.
+  * Remove empty line at the end of changelog.
+  * Bump Standards-Version to 4.2.1, no changes required.
+  * Add a watch file.
+  * Add the upstream GPG signing key.
+  * Update the build dependencies following the port to Frameworks:
+    - remove kdelibs5-dev, and libkdegames-dev
+    - add extra-cmake-modules, qtbase5-dev, libqt5svg5-dev,
+      libqt5texttospeech5-dev, libkf5configwidgets-dev, libkf5crash-dev,
+      libkf5dbusaddons-dev, libkf5doctools-dev, libkf5kio-dev, libkf5plasma-dev,
+      libkf5plotting-dev, libkf5textwidgets-dev, libkf5xmlgui-dev,
+      libkf5wallet-dev, and libkf5kdegames-dev
+  * Use the right dh addon:
+    - switch from kde to kf5 dh addon
+    - bump the pkg-kde-tools build dependency to >= 0.15.16
+  * Switch cmake parameter BIN_INSTALL_DIR to KDE_INSTALL_BINDIR, as the former
+    is deprecated.
+  * Switch the Homepage to kde.org.
+  * Switch Maintainer to Debian Qt/KDE Maintainers.
+  * Bump the cmake build dependency to >= 3.2.0, as indicated by the upstream
+    build system.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 23 Nov 2018 22:20:19 +0100
+
+knights (2.5.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fix typo in the description of knights-dbg. (Closes: #724819)
+  * Remove menu file and its pixmap, as knights already provides a desktop
+    file.
+  * Migrate to the dh sequencer:
+    - use the dh sequencer in rules, using the kde addon, with parallel build,
+      and in as-needed mode
+    - drop the cdbs build dependency
+  * Bump Standards-Version to 3.9.6, no changes required.
+  * Explicitly install to debian/knights, instead of the default debian/tmp
+    followed by moves by dh_install.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 29 Nov 2015 12:45:20 +0100
+
+knights (2.5.0-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release.
+  * Update knights.xpm.
+  * Bump the kdelibs5-dev and libkdegames-dev build dependencies to 4.9,
+    as required upstream.
+  * Update Vcs-* headers.
+  * Bump Standards-Version to 3.9.4, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 20 Jul 2013 16:35:21 +0200
+
+knights (2.4.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Delete load_right_default_theme.diff, applied upstream.
+  * Bump debhelper compatibility level to 9.
+  * Move sjeng from Suggests to Recommends.
+  * Add stockfish to Recommends.
+  * Add knights-dbg package.
+  * Bump Standards-Version to 3.9.3; no changes needed.
+  * Update copyright file.
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Wed, 12 Sep 2012 23:49:48 +0200
+
+knights (2.3.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add load_right_default_theme.diff to prevent issues when you have configured
+    a theme that doesn't exist (may happen easily with obsolete themes).
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Mon, 30 May 2011 21:39:08 +0200
+
+knights (2.3.1-2) experimental; urgency=low
+
+  * Remove 02_no_hotnewstuff.diff since knights GHNS is suposed to work
+    fine with KDE 4.6 libraries.
+  * Bump kdelibs5-dev, libkdegames-dev build dependencies to 4.6 because of the
+    patch mentioned in the previous changelog entry.
+  * Bump Standards-Version to 3.9.2; no changes needed.
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Wed, 04 May 2011 21:10:20 +0200
+
+knights (2.3.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update patches:
+    - Remove 03_dont_crash_fics.diff, no longer needed.
+    - Remove 04_stop_clock_game_over.diff, no longer needed.
+  * Add sjeng to Suggests.
+  * Add crafty to Suggests.
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Tue, 22 Mar 2011 17:09:46 +0100
+
+knights (2.2.0-2) unstable; urgency=low
+
+  * Provide a default.desktop symlink to make knights work even if the
+    desktop file for the configured theme doesn't exist (this could easily
+    happen if you're upgrading from knights 0.6 among other reasons).
+  * Remove the starting article from short description.
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Wed, 02 Mar 2011 22:32:04 +0100
+
+knights (2.2.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove 01_add_categories_to_desktop_file.diff, no longer needed.
+  * Add 02_no_hotnewstuff.diff.
+  * Add 03_dont_crash_fics.diff.
+  * Add 04_stop_clock_game_over.diff.
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Fri, 25 Feb 2011 21:37:40 +0100
+
+knights (2.0.1-2) unstable; urgency=low
+
+  * Upload to unstable. (Closes: #604334, #591562, #528348, #366183)
+  * Point debian/control Vcs fields to the new Git repository.
+  * Bump Standards-Version to 3.9.1, no changes needed.
+  * Move manpage to section 6 since this software is a game.
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sun, 13 Feb 2011 21:59:24 +0100
+
+knights (2.0.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * Set myself as Uploader and Debian KDE Extras Team as Maintainer.
+    (Closes: #512524)
+  * Switch debian/rules to cdbs.
+  * Updated Build-Depends:
+    - Added: cdbs, pkg-kde-tools, cmake, kdelibs5-dev, libkdegames-dev
+    - Removed: kdelibs4-dev, dpatch, poxml, imagemagick, libx11-dev,
+      libxext-dev, libxinerama-dev, libxpm-dev, x-dev
+  * Updated Depends:
+    - Added: ${misc:Depends}
+    - Removed: kdebase-kio-plugins
+  * Updated Suggests and Recommends:
+    - moved gnuchess from Suggests to Recommends
+    - removed crafty, sjeng, knights-themepack
+  * Set dephelper compatibility level to 7.
+  * Switch to dpkg source format 3.0 (quilt).
+  * Updated description and homepage.
+  * Delete debian/watch for now because upstream is not using
+    sourceforge anymore.
+  * Updated debian/copyright.
+  * Updated debian/knights.1 manpage.
+  * Bump Standards-Version to 3.8.4.
+  * Dropped obsolete patches:
+    - 01_gcc-4.0-fix.dpatch
+    - 02_de.po.dpatch
+    - 03_noGPLonload.dpatch
+    - 04_qt3_headers.dpatch
+  * Added patch 01_add_categories_to_desktop_file.diff
+  * Removed obsolete and uneccesary files debian/debiandirs debian/docs.
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sun, 13 Jun 2010 12:21:13 +0200
+
+knights (0.6-8.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Drop obsolete QT compat headers, patch by Barry deFreese
+    (Closes: #464630)
+
+ -- Moritz Muehlenhoff <jmm@debian.org>  Wed, 02 Apr 2008 22:45:54 +0200
+
+knights (0.6-8.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/rules: Fix bashism. (Closes: #459084)
+
+ -- Marc 'HE' Brockschmidt <he@debian.org>  Mon, 28 Jan 2008 00:00:08 +0100
+
+knights (0.6-8) unstable; urgency=low
+
+  * New Mantainer. (Closes: #439531)
+  * debian/watch: Updated to version 3.
+  * debian/control:
+    - Build-Depends: debhelper (>= 5.0.0).
+    - Suggests: knights-themepack
+  * debian/compat: DH_COMPAT 5.
+  * debian/rules: copy updated config.guess and config.sub files to admin
+    directory.
+
+ -- Jose Carlos Medeiros <debian@psabs.com.br>  Thu, 06 Sep 2007 18:31:36 -0300
+
+knights (0.6-7.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Don't send the "st" (search time limit) command when using xboard to talk
+    to chess engines; it makes some chess engines confused wrt. how much time
+    they should spend on each move. Patch from Alex Midgley. (Closes: #366181)
+
+ -- Steinar H. Gunderson <sesse@debian.org>  Tue, 29 Aug 2006 00:41:44 +0200
+
+knights (0.6-7) unstable; urgency=low
+
+  * debian/control: added kdebase-kio-plugins to Depends field.
+    This allow users without kde installations to be able to load knights
+    themes. (Closes: #361451)
+  * Added a dpatch (courtesy of Claudio Moratti) to prevent knights from asking
+    to agree to GPL in order to install it. (Closes: #360847)
+  * debian/control: Standards-Version bumped to 3.7.2 (no changes required).
+
+ -- Tommaso Moroni <moronito@debian.org>  Sun, 28 May 2006 16:29:36 +0200
+
+knights (0.6-6) unstable; urgency=low
+
+  * Rebuild against kdelibs4c2a. (Closes: #338269)
+  * debian/control: build-depends on specific libraries instead of xlibs-dev.
+
+ -- Tommaso Moroni <moronito@debian.org>  Sun,  4 Dec 2005 11:55:42 +0100
+
+knights (0.6-5) unstable; urgency=low
+
+  * Installed a menu icon, thanks to Steffen Joeris
+    for the patch. (Closes: #333383)
+  * debian/rules: removes po/de.gmo during cleaning and restores original
+    doc/Makefile.in to allow multiple builds from the same source.
+    Thanks to Steffen Joeris for the help. (Closes: #333386)
+
+ -- Tommaso Moroni <moronito@debian.org>  Sun, 23 Oct 2005 17:51:37 +0200
+
+knights (0.6-4) unstable; urgency=low
+
+  * Rebuild for C++-4.0 ABI transition and for libjack0.80.0 removal. (Closes: #317207)
+  * debian/patches: added corrections to the German PO file,
+    thanks to Jens Seidel. (Closes: #314004)
+  * debian/control: Standards-Version bumped to 3.6.2 (no changes required).
+
+ -- Tommaso Moroni <moronito@debian.org>  Sun, 11 Sep 2005 16:53:42 +0200
+
+knights (0.6-3) unstable; urgency=low
+
+  * debian/patches: added a patch to allow compilation with g++-4.0,
+    thanks to Andreas Jochens. (Closes: #300362)
+
+ -- Tommaso Moroni <moronito@debian.org>  Sun, 20 Mar 2005 17:44:17 +0100
+
+knights (0.6-2) unstable; urgency=low
+
+  * debian/control: added xlibs-dev to the build-depends. (Closes: #300139)
+  * debian/rules: added --enable-libsuffix= to configure command, so on some archs
+    /lib64 isn't assumed as the only library directory suffix.
+  * debian/copyright: made distinction between license and copyright.
+
+ -- Tommaso Moroni <moronito@debian.org>  Fri, 18 Mar 2005 18:40:20 +0100
+
+knights (0.6-1) unstable; urgency=low
+
+  * Initial Release. (closes: #136271)
+
+ -- Tommaso Moroni <moronito@debian.org>  Thu, 23 Dec 2004 11:20:19 +0100
